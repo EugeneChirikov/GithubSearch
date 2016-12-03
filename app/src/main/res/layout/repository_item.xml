@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/repository_item_padding">
+    <ImageView
+        android:layout_marginStart="@dimen/repository_item_padding"
+        android:layout_marginBottom="@dimen/repository_item_padding"
+        android:layout_centerVertical="true"
+        android:layout_width="@dimen/repository_item_avatar_size"
+        android:layout_height="@dimen/repository_item_avatar_size"
+        app:srcCompat="@drawable/github_avatar_placeholder_60dp"
+        android:id="@+id/avatarImage" />
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/avatarImage"
+        android:layout_marginStart="@dimen/repository_item_padding"
+        android:layout_marginEnd="@dimen/repository_item_padding"
+        android:layout_marginBottom="@dimen/repository_item_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameText"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        <TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionText"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/repository_item_separator_height"
+        android:background="@color/colorAccent"/>
+</RelativeLayout>

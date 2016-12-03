@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Github Search</string>
+    <string name="action_search">Search</string>
+    <string name="search_welcome">Start typing a Github project name to see results</string>
+    <string name="search_no_results">No Github projects found:(</string>
+    <string name="network_error">Network error</string>
+</resources>
