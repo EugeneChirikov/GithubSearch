@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomScrollIndic
     private BottomScrollIndicator mBottomScrollIndicator;
 
     private SearchView mSearchView;
-    private CharSequence mRestoredSearchQuery;
+    private String mRestoredSearchQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements BottomScrollIndic
         if (mSearchView != null) {
             CharSequence query = mSearchView.getQuery();
             if (!TextUtils.isEmpty(query)) {
-                savedInstanceState.putCharSequence(SEARCH_QUERY, query);
+                savedInstanceState.putString(SEARCH_QUERY, query.toString());
             }
         }
     }
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements BottomScrollIndic
     }
 
     private void restoreInstanceState(Bundle savedInstanceState) {
-        mRestoredSearchQuery = savedInstanceState.getCharSequence(SEARCH_QUERY);
+        mRestoredSearchQuery = savedInstanceState.getString(SEARCH_QUERY);
         if (mRestoredSearchQuery != null) {
             List<Repository> repositories = savedInstanceState.getParcelableArrayList(REPOSITORIES_LIST);
             showRepositoriesListOrNoResults(repositories);
